@@ -21,16 +21,18 @@ print('Enter the random number generator seed.')
 seed = int(input())
 random.seed(seed)
 
+print('Enter the supposed length of the text.')
+lower_bound = int(input())
+
 prev = '$'
 word_count = 0
-upper_bound = 250
 
 while True:
     word = next_word[prev][choose(prev)]
     if word == '$':
         if prev != '$':
             print('. ', end = '')
-        if word_count >= upper_bound:
+        if word_count >= lower_bound:
             break
     else:
         print(' ' + word if prev != '$' else word.title(), end = '')

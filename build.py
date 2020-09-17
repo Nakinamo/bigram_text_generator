@@ -1,6 +1,7 @@
 import os
 
-f = open('input.txt', 'r')
+print('Enter the path to the corpus.')
+f = open(input(), 'r')
 text = f.read()
 text = text.lower()
 f.close()
@@ -42,7 +43,8 @@ for i in model:
         count += j[1]
     for j in range(len(weight[i])):
         weight[i][j] /= count
-    print(f'next_word[\'{i}\'] =', next_word[i], f'\nweight[\'{i}\'] =', weight[i], file = f)    
+    print(f'next_word[\'{i}\'] =', next_word[i], f'\nweight[\'{i}\'] =', weight[i], file = f)
+
 f = open('tmp.txt', 'r')
 text = f.read()
 text = text.replace('\\\\', '\\')
