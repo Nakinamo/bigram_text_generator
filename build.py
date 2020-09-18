@@ -6,10 +6,12 @@ text = f.read()
 text = text.lower()
 f.close()
 
-specials = '~`!?@#$%^&*"()_+-=\\/,;:[]{}'
+specials = '~`@#$%^&*"()_+-=\\/,[]{}'
 for i in specials:
     text = text.replace(i, ' ')
-text = text.replace('.', ' $ ')
+ends = '!?.:;'
+for i in ends:
+    text = text.replace(i, ' $ ')
 text = text.replace('\'', '\\'+'\'')
 
 freq = {}
